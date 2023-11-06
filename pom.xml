@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.minatoorgtestcase.gae1partialsearch1</groupId>
+  <artifactId>gae1PartialSearch1</artifactId>
+  <version>1.0.0-${env-suffix}</version>
+  <packaging>pom</packaging>
+  <properties>
+  	 <appengine.cloud.tools.version>2.2.0</appengine.cloud.tools.version>
+  </properties>
+  <modules>
+  	<module>Frontend</module>
+  	<module>BackendBase</module>
+  	<module>BackendCommonBase</module>
+  	<module>BackendApp</module>
+  	<module>BackInstance</module>
+  </modules>
+  <build>
+		<plugins>
+			<!-- flatten before deploy. removes $revision -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>flatten-maven-plugin</artifactId>
+				<version>1.2.7</version>
+				<configuration>
+				</configuration>
+				<executions>
+					<!-- enable flattening -->
+					<execution>
+						<id>flatten</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>flatten</goal>
+						</goals>
+					</execution>
+					<!-- ensure proper cleanup -->
+					<execution>
+						<id>flatten.clean</id>
+						<phase>clean</phase>
+						<goals>
+							<goal>clean</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<profiles>
+		
+		<profile>
+        	<id>default</id>
+            <properties>
+                <env-suffix>DEV</env-suffix>
+                <local-env>true</local-env>
+            </properties>
+            <activation>
+            	<activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>																
+       
+         <profile>
+			<id>pre-prod</id>
+			<properties>
+			  <env-suffix>PRE-PROD</env-suffix>
+			</properties>
+		</profile>
+         <profile>
+			<id>prod</id>
+			<properties>
+			  <env-suffix>PROD</env-suffix>
+			</properties>
+		</profile>
+         <profile>
+			<id>test</id>
+			<properties>
+			  <env-suffix>TEST</env-suffix>
+			</properties>
+		</profile>
+         <profile>
+			<id>dev</id>
+			<properties>
+			  <env-suffix>DEV</env-suffix>
+			</properties>
+		</profile>
+	</profiles>
+</project>

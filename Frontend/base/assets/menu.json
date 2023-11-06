@@ -1,0 +1,59 @@
+{
+  "left" : [ {
+    "pathsInvolved" : [ ],
+    "accessControl" : [ "all", "Development Administrator" ],
+    "label" : "MENU",
+    "element" : "menuItem"
+  }, {
+    "pathsInvolved" : [ "/applicationuser/applicationuserdetail", "/applicationuser/applicationuserlist" ],
+    "accessControl" : [ "all", "Development Administrator" ],
+    "onClick" : "navigate_to_page",
+    "label" : "APPLICATION_USER",
+    "page" : {
+      "name" : "Application Users",
+      "sid" : "c90704fd-e414-4cb0-99fa-67b4ddfe8523",
+      "url" : "/applicationuser/applicationuserlist"
+    },
+    "element" : "menuItem"
+  }, {
+    "pathsInvolved" : [ "/table1/table1detail", "/table1/table1list" ],
+    "accessControl" : [ "all", "Development Administrator" ],
+    "onClick" : "navigate_to_page",
+    "infiniteScroll" : false,
+    "valueChange" : true,
+    "currentNode" : "2cc1f64b-2860-4de4-bc05-1354f4b5a5de",
+    "label" : "TABLE1_LIST_PAGE",
+    "page" : {
+      "name" : "table1 List",
+      "sid" : "b11c4a96-b5d1-4374-9e7d-551e9a423d4a",
+      "url" : "/table1/table1list"
+    },
+    "element" : "menuItem"
+  }, {
+    "pathsInvolved" : [ "/marantable123/marantable123detail", "/marantable123/marantable123list" ],
+    "accessControl" : [ "all", "Development Administrator" ],
+    "onClick" : "navigate_to_page",
+    "infiniteScroll" : false,
+    "valueChange" : true,
+    "currentNode" : "4cb450fe-5336-4a4a-b2c1-78977d3ab3fd",
+    "label" : "MARANTABLE123_LIST_PAGE",
+    "page" : {
+      "name" : "maranTable123 List",
+      "sid" : "211c8f23-5486-4c8c-8b02-4cd0e4109360",
+      "url" : "/marantable123/marantable123list"
+    },
+    "element" : "menuItem"
+  } ],
+  "topBarLeft" : [ ],
+  "topBarMiddle" : [ ],
+  "topBarRight" : [ {
+    "pathsInvolved" : [ ],
+    "languages" : [ {
+      "code" : "en",
+      "name" : "English"
+    } ],
+    "element" : "language"
+  } ],
+  "right" : [ ],
+  "tabs" : [ ]
+}
